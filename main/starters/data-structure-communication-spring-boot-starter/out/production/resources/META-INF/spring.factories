@@ -1,2 +1,0 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  co.edu.uniquindio.utils.communication.transfer.structure.starter.DataStructureCommunicationAutoConfiguration
