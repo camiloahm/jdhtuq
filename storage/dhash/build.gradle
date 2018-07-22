@@ -20,4 +20,7 @@ dependencies {
     testCompile 'org.assertj:assertj-core:3.9.0'
     testCompile "org.powermock:powermock-module-junit4:1.7.1"
     testCompile "org.powermock:powermock-api-mockito2:1.7.1"
+
+    compileOnly 'org.projectlombok:lombok:1.16.20'
+    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
 }

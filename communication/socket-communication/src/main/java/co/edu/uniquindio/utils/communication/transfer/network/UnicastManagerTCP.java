@@ -20,6 +20,7 @@ package co.edu.uniquindio.utils.communication.transfer.network;
 
 import co.edu.uniquindio.utils.communication.message.Message;
 import co.edu.uniquindio.utils.communication.transfer.Communicator;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.log4j.Logger;
 
 import java.io.IOException;
@@ -37,13 +38,8 @@ import java.net.UnknownHostException;
  * @version 1.0, 17/06/2010
  * @since 1.0
  */
+@Slf4j
 public class UnicastManagerTCP implements Communicator {
-
-    /**
-     * Logger
-     */
-    private static final Logger logger = Logger
-            .getLogger(UnicastManagerTCP.class);
 
     /**
      * The server socket that will be waiting for connection.
@@ -69,7 +65,7 @@ public class UnicastManagerTCP implements Communicator {
         try {
             this.serverSocket = new ServerSocket(portTcp);
         } catch (IOException e) {
-            logger.error("Error creating server socket", e);
+            log.error("Error creating server socket", e);
         }
     }
 
@@ -91,9 +87,9 @@ public class UnicastManagerTCP implements Communicator {
             message = messageSerialization.decode(stringMessage);
 
         } catch (IOException e) {
-            logger.error("Error reading socket", e);
+            log.error("Error reading socket", e);
         } catch (ClassNotFoundException e) {
-            logger.error("Error reading socket", e);
+            log.error("Error reading socket", e);
         }
 
         return message;
@@ -115,9 +111,9 @@ public class UnicastManagerTCP implements Communicator {
             objectOutputStream.flush();
 
         } catch (UnknownHostException e) {
-            logger.error("Error writting socket", e);
+            log.error("Error writting socket", e);
         } catch (IOException e) {
-            logger.error("Error writting socket", e);
+            log.error("Error writting socket", e);
         }
 
     }
@@ -149,7 +145,7 @@ public class UnicastManagerTCP implements Communicator {
         try {
             serverSocket.close();
         } catch (IOException e) {
-            logger.error("Error closed server socket", e);
+            log.error("Error closed server socket", e);
         }
     }
 

@@ -16,4 +16,7 @@ dependencies {
     compile project(':main:starters:chord-spring-boot-starter')
     compile project(':main:starters:dhash-spring-boot-starter')
     compile project(':main:starters:socket-communication-spring-boot-starter')
+
+    compileOnly 'org.projectlombok:lombok:1.16.20'
+    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
 }

@@ -8,6 +8,7 @@ import co.edu.uniquindio.utils.communication.transfer.CommunicationManager;
 import co.edu.uniquindio.utils.communication.transfer.CommunicationManagerFactory;
 import co.edu.uniquindio.utils.communication.transfer.MessageProcessor;
 import co.edu.uniquindio.utils.communication.transfer.network.MessageSerialization;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.log4j.Logger;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -23,9 +24,8 @@ import java.util.concurrent.ThreadPoolExecutor;
 
 @SpringBootApplication
 @Configuration
+@Slf4j
 public class NodeMain {
-    private static final Logger logger = Logger
-            .getLogger(NodeMain.class);
 
     public static void main(String[] args) {
         new SpringApplicationBuilder(NodeMain.class)
@@ -40,7 +40,7 @@ public class NodeMain {
             InetAddress addr = InetAddress.getLocalHost();
             hostname = addr.getHostAddress();
         } catch (UnknownHostException e) {
-            logger.error("Error getting hostname", e);
+            log.error("Error getting hostname", e);
         }
 
         return storageNodeFactory.createNode(hostname);

@@ -20,6 +20,7 @@ package co.edu.uniquindio.utils.communication.transfer.network;
 
 import co.edu.uniquindio.utils.communication.message.Message;
 import co.edu.uniquindio.utils.communication.transfer.Communicator;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.log4j.Logger;
 
 import java.io.IOException;
@@ -35,13 +36,8 @@ import java.net.MulticastSocket;
  * @version 1.0, 17/06/2010
  * @since 1.0
  */
+@Slf4j
 public class MulticastManagerNetworkLAN implements Communicator {
-
-    /**
-     * Logger
-     */
-    private static final Logger logger = Logger
-            .getLogger(MulticastManagerNetworkLAN.class);
 
     /**
      * Is the size of the buffer used for receiving messages.
@@ -93,7 +89,7 @@ public class MulticastManagerNetworkLAN implements Communicator {
 
             this.buffer = new byte[(int) bufferSize];
         } catch (IOException e) {
-            logger.error("Error creating multicast socket", e);
+            log.error("Error creating multicast socket", e);
         }
     }
 
@@ -120,7 +116,7 @@ public class MulticastManagerNetworkLAN implements Communicator {
 
             return message;
         } catch (IOException e) {
-            logger.error("Error reading multicast socket", e);
+            log.error("Error reading multicast socket", e);
         }
 
         return null;
@@ -143,7 +139,7 @@ public class MulticastManagerNetworkLAN implements Communicator {
         try {
             multicastSocket.send(datagramPacket);
         } catch (IOException e) {
-            logger.error("Error writting multicast socket", e);
+            log.error("Error writting multicast socket", e);
         }
     }
 

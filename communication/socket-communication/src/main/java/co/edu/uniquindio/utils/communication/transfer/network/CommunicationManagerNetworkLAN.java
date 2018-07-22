@@ -20,6 +20,7 @@ package co.edu.uniquindio.utils.communication.transfer.network;
 
 import co.edu.uniquindio.utils.communication.transfer.CommunicationManagerWaitingResult;
 import co.edu.uniquindio.utils.communication.transfer.Communicator;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.log4j.Logger;
 
 import java.net.InetAddress;
@@ -36,6 +37,7 @@ import java.net.UnknownHostException;
  * @version 1.0, 17/06/2010
  * @since 1.0
  */
+@Slf4j
 public abstract class CommunicationManagerNetworkLAN extends
         CommunicationManagerWaitingResult {
     protected final MessageSerialization messageSerialization;
@@ -56,12 +58,6 @@ public abstract class CommunicationManagerNetworkLAN extends
     public enum CommunicationManagerNetworkLANProperties {
         BUFFER_SIZE_MULTICAST, IP_MULTICAST, PORT_MULTICAST
     }
-
-    /**
-     * Logger
-     */
-    private static final Logger logger = Logger
-            .getLogger(CommunicationManagerNetworkLAN.class);
 
     /**
      * Reciever all messages
@@ -103,7 +99,7 @@ public abstract class CommunicationManagerNetworkLAN extends
             IllegalArgumentException illegalArgumentException = new IllegalArgumentException(
                     "Property PORT_MULTICAST not found");
 
-            logger.error("Property PORT_MULTICAST no found",
+            log.error("Property PORT_MULTICAST no found",
                     illegalArgumentException);
 
             throw illegalArgumentException;
@@ -119,7 +115,7 @@ public abstract class CommunicationManagerNetworkLAN extends
             IllegalArgumentException illegalArgumentException = new IllegalArgumentException(
                     "Property IP_MULTICAST not found");
 
-            logger.error("Property IP_MULTICAST no found",
+            log.error("Property IP_MULTICAST no found",
                     illegalArgumentException);
 
             throw illegalArgumentException;
@@ -136,7 +132,7 @@ public abstract class CommunicationManagerNetworkLAN extends
             IllegalArgumentException illegalArgumentException = new IllegalArgumentException(
                     "Property BUFFER_SIZE_MULTICAST not found");
 
-            logger.error("Property BUFFER_SIZE_MULTICAST no found",
+            log.error("Property BUFFER_SIZE_MULTICAST no found",
                     illegalArgumentException);
 
             throw illegalArgumentException;
@@ -149,7 +145,7 @@ public abstract class CommunicationManagerNetworkLAN extends
             IllegalArgumentException illegalArgumentException = new IllegalArgumentException(
                     "Error of ipmulticast", e);
 
-            logger.error("Error of ipmulticast", illegalArgumentException);
+            log.error("Error of ipmulticast", illegalArgumentException);
 
             throw illegalArgumentException;
         }

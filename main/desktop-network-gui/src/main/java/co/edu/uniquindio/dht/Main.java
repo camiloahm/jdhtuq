@@ -9,7 +9,6 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 
 import javax.swing.*;
-import java.awt.*;
 
 @SpringBootApplication
 public class Main {

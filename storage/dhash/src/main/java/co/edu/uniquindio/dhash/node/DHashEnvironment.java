@@ -30,6 +30,7 @@ import co.edu.uniquindio.utils.communication.message.Message;
 import co.edu.uniquindio.utils.communication.message.Message.SendType;
 import co.edu.uniquindio.utils.communication.transfer.CommunicationManager;
 import co.edu.uniquindio.utils.communication.transfer.MessageProcessor;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.log4j.Logger;
 
 /**
@@ -44,9 +45,8 @@ import org.apache.log4j.Logger;
  * @see DHashNode
  * @since 1.0
  */
+@Slf4j
 public class DHashEnvironment implements MessageProcessor {
-    private static final Logger logger = Logger
-            .getLogger(DHashEnvironment.class);
 
     private final CommunicationManager communicationManager;
     private final DHashNode dHashNode;
@@ -70,9 +70,9 @@ public class DHashEnvironment implements MessageProcessor {
     @Override
     public Message process(Message message) {
 
-        logger.debug("Message to: " + dHashNode.getName() + " Message:["
+        log.debug("Message to: " + dHashNode.getName() + " Message:["
                 + message.toString() + "]");
-        logger.debug("Node " + dHashNode.getName() + ", arrived message of "
+        log.debug("Node " + dHashNode.getName() + ", arrived message of "
                 + message.getMessageType());
 
         Message response = null;
@@ -199,8 +199,8 @@ public class DHashEnvironment implements MessageProcessor {
 
         }
 
-        logger.debug("Node " + dHashNode.getName() + ", confirmation for ");
-        logger.debug("Response message: [" + getResponseMessage.toString()
+        log.debug("Node " + dHashNode.getName() + ", confirmation for ");
+        log.debug("Response message: [" + getResponseMessage.toString()
                 + "]");
 
         return getResponseMessage.build();
@@ -224,8 +224,8 @@ public class DHashEnvironment implements MessageProcessor {
             if (replicate) {
                 dHashNode.replicateData(resource);
             }
-        }catch (OverlayException e) {
-            logger.error("Error replicating data", e);
+        } catch (OverlayException e) {
+            log.error("Error replicating data", e);
         }
 
         return null;

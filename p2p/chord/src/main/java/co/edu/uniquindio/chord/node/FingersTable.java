@@ -25,6 +25,7 @@ import java.util.Arrays;
 import co.edu.uniquindio.chord.ChordKey;
 import co.edu.uniquindio.overlay.Key;
 import co.edu.uniquindio.overlay.KeyFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.log4j.Logger;
 
 /**
@@ -45,13 +46,9 @@ import org.apache.log4j.Logger;
  * @see ChordNode
  * @see StableRing
  */
+@Slf4j
 public class FingersTable {
 
-	/**
-	 * Logger
-	 */
-	private static final Logger logger = Logger
-			.getLogger(FingersTable.class);
 
 	/**
 	 * List of {@link Key} that represents the fingers table.
@@ -135,10 +132,10 @@ public class FingersTable {
 			fingersTable[next] = chordNode.getSuccessor();
 		}
 
-		logger.debug("Node: " + chordNode.getKey().getValue() + " Next: " + next
+		log.debug("Node: " + chordNode.getKey().getValue() + " Next: " + next
 				+ " ChordKey: " + createNext(chordNode.getKey()));
 
-		logger.debug("Fingers: " + Arrays.asList(fingersTable));
+		log.debug("Fingers: " + Arrays.asList(fingersTable));
 	}
 
 	/**

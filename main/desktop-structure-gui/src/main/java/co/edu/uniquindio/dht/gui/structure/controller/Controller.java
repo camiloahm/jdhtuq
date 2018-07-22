@@ -21,10 +21,8 @@ import co.edu.uniquindio.utils.communication.Observer;
 import co.edu.uniquindio.utils.communication.message.Message;
 import co.edu.uniquindio.utils.communication.transfer.CommunicationManager;
 
-import java.awt.*;
 import java.io.*;
 import java.util.*;
-import java.util.List;
 
 //TODO Documentar
 public class Controller implements Observer<Message> {

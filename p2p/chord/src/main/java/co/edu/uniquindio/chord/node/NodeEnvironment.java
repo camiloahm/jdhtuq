@@ -29,6 +29,7 @@ import co.edu.uniquindio.utils.communication.message.Message.SendType;
 import co.edu.uniquindio.utils.communication.message.SequenceGenerator;
 import co.edu.uniquindio.utils.communication.transfer.CommunicationManager;
 import co.edu.uniquindio.utils.communication.transfer.MessageProcessor;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.log4j.Logger;
 
 import java.math.BigInteger;
@@ -46,13 +47,8 @@ import java.math.BigInteger;
  * @see ChordNode
  * @since 1.0
  */
+@Slf4j
 class NodeEnvironment implements MessageProcessor {
-
-    /**
-     * Logger
-     */
-    private static final Logger logger = Logger
-            .getLogger(NodeEnvironment.class);
 
     /**
      * Communication manager
@@ -90,7 +86,7 @@ class NodeEnvironment implements MessageProcessor {
      */
     public Message process(Message message) {
 
-        logger.debug("Message to '" + chordNode.getKey().getValue() + "', ["
+        log.debug("Message to '" + chordNode.getKey().getValue() + "', ["
                 + message.toString());
 
         Message response = null;

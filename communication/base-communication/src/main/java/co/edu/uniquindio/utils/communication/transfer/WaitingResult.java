@@ -18,6 +18,7 @@
 
 package co.edu.uniquindio.utils.communication.transfer;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.log4j.Logger;
 
 import java.util.concurrent.Semaphore;
@@ -32,13 +33,8 @@ import java.util.concurrent.Semaphore;
  * @version 1.0, 17/06/2010
  * @since 1.0
  */
+@Slf4j
 class WaitingResult<T> extends Thread {
-
-    /**
-     * Logger
-     */
-    private static final Logger logger = Logger
-            .getLogger(WaitingResult.class);
 
     /**
      * The sequence number of the message
@@ -129,11 +125,11 @@ class WaitingResult<T> extends Thread {
 
         if (!stop) {
 
-            logger
+            log
                     .debug("Timeout waiting for a response for number sequence= '"
                             + sequence + "'");
 
-            logger.debug("Timeout waiting for a response");
+            log.debug("Timeout waiting for a response");
 
             returnsManager.releaseWaitingResult(sequence, null);
         }
@@ -149,7 +145,7 @@ class WaitingResult<T> extends Thread {
         try {
             semaphore.acquire();
         } catch (InterruptedException e) {
-            logger.error("Error to stop semaphore", e);
+            log.error("Error to stop semaphore", e);
         }
 
         return result;

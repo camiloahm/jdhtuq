@@ -53,7 +53,7 @@ public class CommunicationManagerTCP extends CommunicationManagerNetworkLAN {
 	/**
 	 * Logger
 	 */
-	private static final Logger logger = Logger
+	private static final Logger log = Logger
 			.getLogger(CommunicationManagerTCP.class);
 
 	/**
@@ -72,7 +72,7 @@ public class CommunicationManagerTCP extends CommunicationManagerNetworkLAN {
 			IllegalArgumentException illegalArgumentException = new IllegalArgumentException(
 					"Property PORT_TCP_RESOURCE not found");
 
-			logger.error("Property PORT_TCP_RESOURCE not found",
+			log.error("Property PORT_TCP_RESOURCE not found",
 					illegalArgumentException);
 
 			throw illegalArgumentException;
@@ -96,7 +96,7 @@ public class CommunicationManagerTCP extends CommunicationManagerNetworkLAN {
 			IllegalArgumentException illegalArgumentException = new IllegalArgumentException(
 					"Property PORT_TCP not found");
 
-			logger.error("Property PORT_TCP not found",
+			log.error("Property PORT_TCP not found",
 					illegalArgumentException);
 
 			throw illegalArgumentException;

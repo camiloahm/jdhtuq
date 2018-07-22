@@ -2,7 +2,6 @@ package co.edu.uniquindio.chord.node;
 
 import co.edu.uniquindio.chord.Chord;
 import co.edu.uniquindio.chord.ChordKey;
-import co.edu.uniquindio.overlay.Key;
 import co.edu.uniquindio.overlay.KeyFactory;
 import co.edu.uniquindio.overlay.OverlayException;
 import co.edu.uniquindio.utils.communication.message.SequenceGenerator;

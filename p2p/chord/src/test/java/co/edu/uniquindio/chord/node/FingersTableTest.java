@@ -1,7 +1,6 @@
 package co.edu.uniquindio.chord.node;
 
 import co.edu.uniquindio.chord.ChordKey;
-import co.edu.uniquindio.overlay.Key;
 import co.edu.uniquindio.overlay.KeyFactory;
 import org.junit.Before;
 import org.junit.Test;

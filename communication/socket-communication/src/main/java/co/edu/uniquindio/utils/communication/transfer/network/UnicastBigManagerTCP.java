@@ -20,6 +20,7 @@ package co.edu.uniquindio.utils.communication.transfer.network;
 
 import co.edu.uniquindio.utils.communication.message.Message;
 import co.edu.uniquindio.utils.communication.transfer.Communicator;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.log4j.Logger;
 
 import java.io.IOException;
@@ -38,13 +39,9 @@ import java.net.UnknownHostException;
  * @version 1.0, 17/06/2010
  * @since 1.0
  */
+@Slf4j
 public class UnicastBigManagerTCP implements Communicator {
 
-    /**
-     * Logger
-     */
-    private static final Logger logger = Logger
-            .getLogger(UnicastBigManagerTCP.class);
     /**
      * The server socket that will be waiting for connection.
      */
@@ -64,7 +61,7 @@ public class UnicastBigManagerTCP implements Communicator {
         try {
             this.serverSocket = new ServerSocket(portTcp);
         } catch (IOException e) {
-            logger.error("The communication socket could not be created", e);
+            log.error("The communication socket could not be created", e);
         }
     }
 
@@ -86,9 +83,9 @@ public class UnicastBigManagerTCP implements Communicator {
             message = messageSerialization.decode(stringMessage);
 
         } catch (IOException e) {
-            logger.error("Error reading socket", e);
+            log.error("Error reading socket", e);
         } catch (ClassNotFoundException e) {
-            logger.error("Error reading socket", e);
+            log.error("Error reading socket", e);
         }
 
         return message;
@@ -113,14 +110,14 @@ public class UnicastBigManagerTCP implements Communicator {
             objectOutputStream.flush();
 
         } catch (UnknownHostException e) {
-            logger.error("Error sending message", e);
+            log.error("Error sending message", e);
         } catch (IOException e) {
-            logger.error("Error sending message", e);
+            log.error("Error sending message", e);
         } finally {
             try {
                 socket.close();
             } catch (IOException e) {
-                logger.error("Error closed socket", e);
+                log.error("Error closed socket", e);
             }
         }
 
@@ -153,7 +150,7 @@ public class UnicastBigManagerTCP implements Communicator {
         try {
             serverSocket.close();
         } catch (IOException e) {
-            logger.error("Error closed socked", e);
+            log.error("Error closed socked", e);
         }
     }
 

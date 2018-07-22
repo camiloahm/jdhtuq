@@ -9,15 +9,15 @@ import co.edu.uniquindio.storage.StorageException;
 import co.edu.uniquindio.utils.communication.message.Address;
 import co.edu.uniquindio.utils.communication.message.Message;
 import co.edu.uniquindio.utils.communication.transfer.MessageProcessor;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.log4j.Logger;
 
 import javax.swing.text.html.Option;
 import java.math.BigInteger;
 import java.util.Optional;
 
+@Slf4j
 public class NodeMessageProcessor implements MessageProcessor {
-    private static final Logger logger = Logger
-            .getLogger(NodeMessageProcessor.class);
 
     private final DHashNode storageNode;
 
@@ -59,7 +59,7 @@ public class NodeMessageProcessor implements MessageProcessor {
                     .param(Protocol.LeaveResponseParams.MESSAGE.name(), "OK")
                     .build();
         } catch (StorageException e) {
-            logger.error("Problem doing put", e);
+            log.error("Problem doing put", e);
             return Message.builder()
                     .sendType(Message.SendType.RESPONSE)
                     .messageType(Protocol.LEAVE_RESPONSE)
@@ -75,7 +75,7 @@ public class NodeMessageProcessor implements MessageProcessor {
     private Message processGetSuccessor(Message request) {
         ChordNode overlayNode = (ChordNode) storageNode.getOverlayNode();
 
-        logger.info("Querying current successor: " + Optional.ofNullable(overlayNode.getSuccessor()).orElse(new ChordKey(BigInteger.ZERO)).getValue());
+        log.info("Querying current successor: " + Optional.ofNullable(overlayNode.getSuccessor()).orElse(new ChordKey(BigInteger.ZERO)).getValue());
 
         return Message.builder()
                 .sendType(Message.SendType.RESPONSE)
@@ -116,7 +116,7 @@ public class NodeMessageProcessor implements MessageProcessor {
                         .build();
             }
         } catch (StorageException e) {
-            logger.error("Problem doing put", e);
+            log.error("Problem doing put", e);
             return Message.builder()
                     .sendType(Message.SendType.RESPONSE)
                     .messageType(Protocol.PUT_RESPONSE)
@@ -144,7 +144,7 @@ public class NodeMessageProcessor implements MessageProcessor {
                     .data(Protocol.GetResponseDatas.RESOURCE.name(), resource.getBytes())
                     .build();
         } catch (StorageException e) {
-            logger.error("Problem doing get", e);
+            log.error("Problem doing get", e);
             return Message.builder()
                     .sendType(Message.SendType.RESPONSE)
                     .messageType(Protocol.GET_RESPONSE)

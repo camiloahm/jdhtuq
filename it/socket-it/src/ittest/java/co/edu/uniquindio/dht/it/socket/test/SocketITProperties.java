@@ -1,7 +1,6 @@
 package co.edu.uniquindio.dht.it.socket.test;
 
 import lombok.Data;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 

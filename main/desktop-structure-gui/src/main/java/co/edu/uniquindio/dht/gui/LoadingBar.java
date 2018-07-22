@@ -1,14 +1,7 @@
 package co.edu.uniquindio.dht.gui;
 
+import javax.swing.*;
 import java.awt.*;
-
-import javax.swing.BorderFactory;
-import javax.swing.JDialog;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JProgressBar;
-import javax.swing.SwingUtilities;
 //TODO Documentar
 @SuppressWarnings("serial")
 public class LoadingBar extends JDialog {

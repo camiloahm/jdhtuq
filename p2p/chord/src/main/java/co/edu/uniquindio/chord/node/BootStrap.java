@@ -26,6 +26,7 @@ import co.edu.uniquindio.utils.communication.message.Address;
 import co.edu.uniquindio.utils.communication.message.Message;
 import co.edu.uniquindio.utils.communication.message.SequenceGenerator;
 import co.edu.uniquindio.utils.communication.transfer.CommunicationManager;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.log4j.Logger;
 
 /**
@@ -40,13 +41,8 @@ import org.apache.log4j.Logger;
  * @see ChordNode
  * @since 1.0
  */
+@Slf4j
 public class BootStrap {
-
-    /**
-     * Logger
-     */
-    private static final Logger logger = Logger
-            .getLogger(BootStrap.class);
 
     /**
      * A Chord uses this method when is created to initializes. If there is an
@@ -63,7 +59,7 @@ public class BootStrap {
      */
     public void boot(ChordNode nodeChord, CommunicationManager communicationManager, SequenceGenerator sequenceGenerator) {
 
-        logger.info("Search node...");
+        log.info("Search node...");
 
         Key findNode;
         Message bootStrapMessage;
@@ -80,7 +76,7 @@ public class BootStrap {
         findNode = communicationManager.sendMessageMultiCast(bootStrapMessage,
                 ChordKey.class);
 
-        logger.info("Finish search node");
+        log.info("Finish search node");
 
         if (findNode == null) {
             /* When no other node is found */
@@ -89,7 +85,7 @@ public class BootStrap {
                             + null + "'");
             nodeChord.createRing();
         } else {
-            logger.debug("Node '" + nodeChord.getKey().getValue() + "' found '"
+            log.debug("Node '" + nodeChord.getKey().getValue() + "' found '"
                     + findNode.getValue() + "'");
             nodeChord.join(findNode);
 
@@ -102,7 +98,7 @@ public class BootStrap {
         nodeChord.getFingersTable().getFingersTable()[0] = nodeChord
                 .getSuccessor();
 
-        logger.info("Node '" + nodeChord.getKey().getValue()
+        log.info("Node '" + nodeChord.getKey().getValue()
                 + "' have by successor '" + nodeChord.getSuccessor().getValue()
                 + "'");
     }

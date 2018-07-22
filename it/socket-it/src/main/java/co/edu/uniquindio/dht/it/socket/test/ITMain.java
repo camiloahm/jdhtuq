@@ -2,7 +2,6 @@ package co.edu.uniquindio.dht.it.socket.test;
 
 import co.edu.uniquindio.utils.communication.message.SequenceGenerator;
 import co.edu.uniquindio.utils.communication.message.SequenceGeneratorImpl;
-import co.edu.uniquindio.utils.communication.transfer.network.MessageSerialization;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.annotation.Bean;

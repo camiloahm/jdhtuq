@@ -24,6 +24,7 @@ import co.edu.uniquindio.chord.ChordKey;
 import co.edu.uniquindio.overlay.*;
 import co.edu.uniquindio.utils.communication.message.SequenceGenerator;
 import co.edu.uniquindio.utils.communication.transfer.CommunicationManager;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.log4j.Logger;
 
 import java.util.List;
@@ -46,13 +47,9 @@ import java.util.concurrent.TimeUnit;
  * @see ChordNode
  * @since 1.0
  */
+@Slf4j
 public class ChordNodeFactory implements OverlayNodeFactory {
 
-    /**
-     * Logger
-     */
-    private static final Logger logger = Logger
-            .getLogger(ChordNodeFactory.class);
     public static final int START_STABLE_RING = 5000;
 
     private final int stableRingTime;
@@ -89,7 +86,7 @@ public class ChordNodeFactory implements OverlayNodeFactory {
         ChordKey key = getKey(name);
         ChordNode chordNode = getNodeChord(key);
 
-        logger.info("Created node with name '" + chordNode.getKey().getValue()
+        log.info("Created node with name '" + chordNode.getKey().getValue()
                 + "' and hashing '" + chordNode.getKey().getHashing()
                 + "'");
 

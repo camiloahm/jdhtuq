@@ -1,6 +1,5 @@
 package co.edu.uniquindio.dht.it.socket.test.ring;
 
-import co.edu.uniquindio.dhash.node.DHashNode;
 import co.edu.uniquindio.dht.it.socket.test.MessageClient;
 
 import java.util.HashMap;

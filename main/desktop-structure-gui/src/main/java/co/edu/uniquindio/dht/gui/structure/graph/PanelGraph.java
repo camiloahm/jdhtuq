@@ -1,24 +1,15 @@
 package co.edu.uniquindio.dht.gui.structure.graph;
 
 
-import java.awt.BasicStroke;
-import java.awt.Color;
-import java.awt.Cursor;
-import java.awt.Dimension;
-import java.awt.FontMetrics;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Image;
+import co.edu.uniquindio.dht.gui.structure.controller.Controller;
+import co.edu.uniquindio.dht.gui.structure.utils.DHDChord;
+
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.swing.BorderFactory;
-import javax.swing.JPanel;
-
-import co.edu.uniquindio.dht.gui.structure.controller.Controller;
-import co.edu.uniquindio.dht.gui.structure.utils.DHDChord;
 //TODO Documentar
 @SuppressWarnings("serial")
 public class PanelGraph extends JPanel implements MouseListener {

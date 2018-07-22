@@ -1,10 +1,5 @@
 package co.edu.uniquindio.chord.node;
 
-import co.edu.uniquindio.chord.node.command.CheckPredecessorObserver;
-import co.edu.uniquindio.chord.node.command.FixFingersObserver;
-import co.edu.uniquindio.chord.node.command.FixSuccessorsObserver;
-import co.edu.uniquindio.chord.node.command.StabilizeObserver;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -12,7 +7,8 @@ import org.mockito.Mock;
 import org.mockito.Spy;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.doNothing;
+import static org.mockito.Mockito.verify;
 
 @RunWith(MockitoJUnitRunner.class)
 public class StableRingTest {
