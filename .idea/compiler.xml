@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+    </annotationProcessing>
+    <bytecodeTargetLevel target="8">
+      <module name="base-communication_main" target="1.8" />
+      <module name="base-communication_test" target="1.8" />
+      <module name="chord-spring-boot-starter_main" target="1.8" />
+      <module name="chord-spring-boot-starter_test" target="1.8" />
+      <module name="chord_main" target="1.8" />
+      <module name="chord_test" target="1.8" />
+      <module name="communication-api_main" target="1.8" />
+      <module name="communication-api_test" target="1.8" />
+      <module name="data-structure-communication-spring-boot-starter_main" target="1.8" />
+      <module name="data-structure-communication-spring-boot-starter_test" target="1.8" />
+      <module name="data-structure-communication_main" target="1.8" />
+      <module name="data-structure-communication_test" target="1.8" />
+      <module name="data-structure-it_ittest" target="1.8" />
+      <module name="data-structure-it_main" target="1.8" />
+      <module name="data-structure-it_test" target="1.8" />
+      <module name="desktop-network-gui_main" target="1.8" />
+      <module name="desktop-network-gui_test" target="1.8" />
+      <module name="desktop-structure-gui_main" target="1.8" />
+      <module name="desktop-structure-gui_test" target="1.8" />
+      <module name="dhash-spring-boot-starter_main" target="1.8" />
+      <module name="dhash-spring-boot-starter_test" target="1.8" />
+      <module name="dhash_main" target="1.8" />
+      <module name="dhash_test" target="1.8" />
+      <module name="jdhtuq_main" target="1.8" />
+      <module name="jdhtuq_test" target="1.8" />
+      <module name="lookup-service_main" target="1.8" />
+      <module name="lookup-service_test" target="1.8" />
+      <module name="socket-communication-spring-boot-starter_main" target="1.8" />
+      <module name="socket-communication-spring-boot-starter_test" target="1.8" />
+      <module name="socket-communication_main" target="1.8" />
+      <module name="socket-communication_test" target="1.8" />
+      <module name="socket-it_ittest" target="1.8" />
+      <module name="socket-it_main" target="1.8" />
+      <module name="socket-it_test" target="1.8" />
+      <module name="storage-service_main" target="1.8" />
+      <module name="storage-service_test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
