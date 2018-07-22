@@ -6,6 +6,7 @@
 *.ipr
 *.iws
 .idea/
+*.idea/compiler.xml
 
 #Gradle
 .gradletasknamecache
